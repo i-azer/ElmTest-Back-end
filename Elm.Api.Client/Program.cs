@@ -13,11 +13,20 @@ builder.Services.AddDapperInfrastructure();
 builder.Services.AddInMemoryCacheInfrastructure();
 #endregion
 #region Application
-builder.Services.AddElmApplicationServices(); 
+builder.Services.AddElmApplicationServices();
 #endregion
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CORSPolicy",
+        builder => builder
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials()
+        .SetIsOriginAllowed((hosts) => true));
+});
 var app = builder.Build();
 
+app.UseCors("CORSPolicy");
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

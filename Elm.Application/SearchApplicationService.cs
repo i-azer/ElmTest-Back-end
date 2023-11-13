@@ -28,8 +28,7 @@ namespace Elm.Application
                     .Concat(dbRecords.Select(rec => new BookDto
                     {
                         BookId = rec.BookId,
-                        BookInfo = rec.BookInfo,
-                        LastModified = rec.LastModified
+                        BookInfo = rec.BookInfo
                     }));
                 _cacheProvider.Add($"{Slug}", cachedRecords, BookConst.CacheExpiryPeriod);
             }

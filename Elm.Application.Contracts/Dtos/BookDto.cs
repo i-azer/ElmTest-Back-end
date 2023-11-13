@@ -6,6 +6,5 @@ namespace Elm.Application.Contracts.Dtos
     {
         public int BookId { get; set; }
         public string BookInfo { get; set; }
-        public DateTime LastModified { get; set; }
     }
 }
