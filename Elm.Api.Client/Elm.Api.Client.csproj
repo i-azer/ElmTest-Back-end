@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Elm.Application\Elm.Application.csproj" />
+    <ProjectReference Include="..\Elm.Cache.InMemory\Elm.Cache.InMemory.csproj" />
+    <ProjectReference Include="..\Elm.Dapper.Orm\Elm.Dapper.Orm.csproj" />
+  </ItemGroup>
+
+</Project>
